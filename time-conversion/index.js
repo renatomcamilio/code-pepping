@@ -19,7 +19,7 @@ Sample Output
  
  */
 
-var testinput = '07:05:45PM';
+var testinput = '12:05:45PM';
 
 function parse(timeStr) {
   var isPM = /pm/i.test(timeStr);
@@ -47,14 +47,10 @@ function formattedTime(components) {
 function convertTime(input) {
   var components = parse(input);
   
-  if (components.isPM) {
-    var hour = components.time.hours;
-    
-    if (hour === 12) {
-      components.time.hours = 0;
-    } else {
-      components.time.hours += 12;
-    }
+  if (components.isPM && components.time.hours < 12) {
+    components.time.hours += 12;
+  } else if (!components.isPM && components.time.hours === 12) {
+    components.time.hours = 0;
   }
   
   return formattedTime(components);
