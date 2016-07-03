@@ -57,6 +57,4 @@ function staircase(n) {
 }
 
 
-console.log(
-  '\n' + staircase(6)
-);
+console.log('\n' + staircase(6));
