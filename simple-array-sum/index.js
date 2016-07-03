@@ -1,7 +1,5 @@
 /**
  * 
- 
-Given an array of  integers, can you find the sum of its elements?
 
 Input Format
 
@@ -16,21 +14,12 @@ Sample Input
 
 6
 1 2 3 4 10 11
+
 Sample Output
 
 31
-Explanation
-
-We print the sum of the array's elements, which is: .
 
  */
-
-/**
-6
-1 2 3 4 10 11
-
-31
-*/
 
 function parse(input) {
   var inputLines = input.split('\n');
