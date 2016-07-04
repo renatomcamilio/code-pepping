@@ -39,15 +39,14 @@ function isNegative(value) { return value < 0; }
 function isZero(value) { return value === 0; }
 
 function fraction(list, n, condition) {
-  return list.filter(condition).length / n;
+  return (list.filter(condition).length / n).toPrecision(6);
 }
 
 function plusMinus(list, n) {
-  return { 
-    positive: fraction(list, n, isPositive),
-    negative: fraction(list, n, isNegative),
-    zero: fraction(list, n, isZero)
-  };
+  return '' +
+    fraction(list, n, isPositive) + '\n' +
+    fraction(list, n, isNegative) + '\n' +
+    fraction(list, n, isZero);
 }
 
 var inputtest = '6\n-4 3 -9 0 4 1';
